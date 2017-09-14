@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Financee
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'layouts/navigation'
+    .container
+      .row.row-offcanvas.row-offcanvas-right
+        .col-12.col-md-9
+          p.float-right.d-md-none
+            button.btn.btn-primary.btn-sm[type="button" data-toggle="offcanvas"]
+              | Toggle nav
+          = yield
+          .row
+            // NADA 
+        .col-6.col-md-3.sidebar-offcanvas[id="sidebar"]
+          .list-group
+            a.list-group-item.active[href="#"]
+              | Link 1
+            a.list-group-item[href="#"]
+              | Link 2
